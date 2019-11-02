@@ -22,8 +22,8 @@ if __name__ == '__main__':
     nba_scraper = NBAScraper()
 
     team_rank, team_names, team_stats = nba_scraper.data_scraping(
-    scraper_settings['path'], scraper_settings['xpath'],
-    scraper_settings['url'], scraper_settings['table'])
+        scraper_settings['path'], scraper_settings['xpath'],
+        scraper_settings['url'], scraper_settings['table'])
 
     df_nba = nba_scraper.data_storage(
         team_rank, team_stats, 
