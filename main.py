@@ -6,13 +6,13 @@ import sys
 
 if __name__ == '__main__':
     scraper_settings = {
-        'path': '/Users/cyriltso/Documents/nba_prediction/chromedriver',
+        'path': your_webdriver_pathfile,
         'xpath': '/html/body/main/div[2]/div/div[2]/div/div/div[1]/div[1]/div/div/label/select',
         'url': 'https://stats.nba.com/teams/traditional/?sort=W_PCT&dir=-1&Season=2019-20&SeasonType=Regular%20Season',
         'table': 'nba-stat-table__overflow',
         'season': '2019/2020',
-        'csv_path': '/Users/cyriltso/Documents/nba_prediction',
-        'csv_name': 'team_stats_predict_input.csv'
+        'csv_path': the_pathfile_for_the_csv,
+        'csv_name': name_of_your_csv
     }
 
     nba_scraper = NBAScraper()
