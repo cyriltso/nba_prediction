@@ -1,10 +1,6 @@
 # Main function in which we will call the methods in the NBAScraper 
 # class in order to store the scraped data in a CSV file.
 
-# To be able to execute this script, you need to have this file
-# and a webdriver (I personally use Chromedriver) in the same
-# folder, otherwise, it won't work.
-
 from NBAScraper import NBAScraper
 import sys
 
