@@ -27,3 +27,7 @@ After being scraped, the data got stored in a CSV file, which is very easy to co
 - The NBA Teams Regular Season dataset in a CSV file.
 - A Python script containing the scraper algorithm.
 - A Python main script allowing the user to use the scraper.
+
+## 5. Warning
+
+To be able to use the scraper, you will need to have a webdriver installed in the same folder than the main.py script (as Selenium uses it to launch the scraping), otherwise, the scraper won't work.
