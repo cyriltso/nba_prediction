@@ -2,13 +2,8 @@ from NBAScraper import NBAScraper
 import sys
 
 if __name__ == '__main__':
-    # You have to replace the template variables in
-    # the following keys of the dictionnary :
-    # path, csv_path and csv_name in order to
-    # be able to call the scraper successfully.
-    
     scraper_settings = {
-        'path': your_webdriver_pathfile,
+        'path': '/Users/cyriltso/Documents/nba_prediction/chromedriver',
         'xpath': '/html/body/main/div[2]/div/div[2]/div/div/div[1]/div[1]/div/div/label/select',
         'url': 'https://stats.nba.com/teams/traditional/?sort=W_PCT&dir=-1&Season=XXXX-XX&SeasonType=Regular%20Season',
         'table': 'nba-stat-table__overflow',
