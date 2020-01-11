@@ -44,7 +44,7 @@ python3 -m main store_type season_year csv_name
 Where :
 -  `season_year` : the season for which you want to collect the data.
 -  `csv_name` : the name of the csv that will contain the extracted data.
--  `store_type` : choosing how to store the data in the CSV file (i.e a for appening data to a CSV file without erasing its contents, w for writing
+-  `store_type` : choosing how to store the data in the CSV file (i.e `a` for appening data to a CSV file without erasing its contents, `w` for writing
 data to a CSV file after having erased its contents).
 
 For example, if I want to scrape the data related to the 2019/2020 season and store it in a CSV file that already contains previous data without erasing it, I will launch the following command (i'm under Python 3.7.4 64-bit) : 
