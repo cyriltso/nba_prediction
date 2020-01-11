@@ -1,20 +1,6 @@
-# Package that allow the user to scrape the teams data from stats.nba.com.
-# The user will be able to scrape the teams data from different years by
-# changing the value of the url in the dictionnary below.
-
-# Chromedriver must be located in the same folder with the Python script
-# file in order to be able to launch the scraping process.
-
-# The scraping code below has been highly inspired by the article from
-# Kevin Song available here : http://kevincsong.com/Scraping-stats.nba.com-with-python/
-
-### Importing Libraries
-
 from selenium import webdriver
 import pandas as pd 
 import os
-
-### Content of the class
 
 class NBAScraper(object):
     """
@@ -34,15 +20,11 @@ class NBAScraper(object):
             - table: id of the content to scrape.
         """
 
-        ### Initializing the scraper on the content of the website
-
         browser = webdriver.Chrome(os.path.join(os.getcwd(), path))
         browser.get(url)
         browser.find_element_by_xpath(xpath)
 
         self.table = browser.find_element_by_class_name(table)
-
-        ### Storing the scraped data on dedicated lists
 
         self.team_rank = []
         self.team_names = []
@@ -72,8 +54,6 @@ class NBAScraper(object):
             - names : data related to the names of each team.
             - season : NBA season scraped.
         """
-
-        ### Storing the scraped data in a dictionnary
 
         self.data = {
             'season': season,
@@ -106,8 +86,6 @@ class NBAScraper(object):
             'personal_fouls_drawn': [i[24] for i in stats],
             'plus_minus': [i[25] for i in stats],
         }
-
-        ### Creating a Pandas DataFrame through the dictionnary
 
         self.df_nba = pd.DataFrame(self.data)
         self.df_nba['rank'] = self.df_nba.index + 1
