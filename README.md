@@ -27,7 +27,7 @@ git clone https://github.com/cyriltso/nba_prediction.git
 -  Then, place yourself inside of this repo :
 
 ```
-cd /your_folder/nba_prediction
+cd /your_folder/nba_prediction/scraper
 ```
 
 -  Finally, launch this command (depending on your Python version, if you are under Python 2.X use `python` and if your are under Python 3.X use `python3` at the beginning of the command) :
