@@ -33,22 +33,24 @@ cd /your_folder/nba_prediction
 -  Finally, launch this command (depending on your Python version, if you are under Python 2.X use `python` and if your are under Python 3.X use `python3` at the beginning of the command) :
 
 ```
-python -m main season_year csv_name
+python -m main store_type season_year csv_name
 ```
 OR
 
 ```
-python3 -m main season_year csv_name
+python3 -m main store_type season_year csv_name
 ```
 
 Where :
 -  `season_year` : the season for which you want to collect the data.
 -  `csv_name` : the name of the csv that will contain the extracted data.
+-  `store_type` : choosing how to store the data in the CSV file (i.e a for appening data to a CSV file without erasing its contents, w for writing
+data to a CSV file after having erased its contents).
 
-For example, if I want to scrape the data related to the 2019/2020 season, I will launch the following command (i'm under Python 3.7.4 64-bit) : 
+For example, if I want to scrape the data related to the 2019/2020 season and store it in a CSV file that already contains previous data without erasing it, I will launch the following command (i'm under Python 3.7.4 64-bit) : 
 
 ```
-python3 -m main 2019/2020 teams_stats_20192020.csv
+python3 -m main a 2019/2020 teams_stats_20192020.csv
 ```
 
 After launching this command, the `teams_stats_20192020.csv` file will appear in the folder of this script.

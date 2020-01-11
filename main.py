@@ -10,11 +10,16 @@ if __name__ == '__main__':
         'csv_path': '/Users/cyriltso/Documents/nba_prediction'
     }
 
-    season_year = sys.argv[1]
-    csv_name = sys.argv[2]
+    store_type = sys.argv[1]
+    season_year = sys.argv[2]
+    csv_name = sys.argv[3]
 
-    year_url_format = season_year.replace("/", "-")
-    season_url = scraper_settings['url'].replace("XXXX-XX", year_url_format)
+    year_url_format = list(season_year.replace("/", "-"))
+    del year_url_format[5:7]
+
+    year_formated = "".join(year_url_format)
+
+    season_url = scraper_settings['url'].replace("XXXX-XX", year_formated)
 
     nba_scraper = NBAScraper()
 
@@ -26,6 +31,10 @@ if __name__ == '__main__':
         team_rank, team_stats, 
         team_names, season_year)
 
-    nba_scraper.csv_storage(df_nba, csv_name, scraper_settings['csv_path'])  
+    nba_scraper.csv_storage(
+        df_nba, 
+        csv_name, 
+        scraper_settings['csv_path'],
+        store_type)  
 
 

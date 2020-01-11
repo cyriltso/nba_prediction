@@ -92,7 +92,7 @@ class NBAScraper(object):
  
         return self.df_nba
     
-    def csv_storage(self, df, file_name, csv_path):
+    def csv_storage(self, df, file_name, csv_path, storing_mode):
         """
         Method that allows the user to store the DataFrame to a CSV file.
 
@@ -100,10 +100,17 @@ class NBAScraper(object):
             - df: DataFrame to store in the CSV file.
             - file_name: name of the CSV file.
             - csv_path: location of the stored CSV file.
+            - store_type : choose how to store the data (a for appening 
+            data to a CSV file without erasing its contents, w for writing
+            data to a CSV file after having erased its contents).
         """
 
         self.df = df
         self.file_name = file_name
         self.csv_path = csv_path
+        self.storing_mode = storing_mode
         
-        self.df.to_csv(os.path.join(self.csv_path, self.file_name), index=False)
+        self.df.to_csv(
+            os.path.join(self.csv_path, self.file_name), 
+            index=False,
+            mode=storing_mode)
